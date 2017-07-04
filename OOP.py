@@ -34,9 +34,11 @@ class Mobile():
         ''' Every Mobile phone can dial ,receive calls and send message'''
     def  dial(self):
         print("Dialing Number...")
+        return "Dial"
         
     def  recieveCall(self):
         print("Receiving Call...")
+        return "Receieve call"
         
       #Abstration illustration :that's use of methods and functions,So one just call this method ''' 
     def  sendMessage(self):
@@ -45,28 +47,32 @@ class Mobile():
         messageToSend = input("Write your message here:")
         print("Message sent\n")
         print("To:{} \n Message:{}".format(receiverNumber,messageToSend))
+        return 'message sent'
         
 ''' Samsung has propeties of a Mobile phnoe: Illustration of Inheritance'''        
 class Samsung(Mobile):
   #instance methods for Samsung,for it can connect to wifi and has camera but not all Mobile phones have"""
     def GetWIFIConnection(self):
         print("connected to wifi")
+        return 'wifi'
         
     ''' static polymorphism '''
     #This is one method which shows camera functionality  
     def  CameraClick(self):
         print("Camera clicked")
+        return 'Camera click'
   
     #This is one overloaded method which shows camera functionality as well but with its camera's different mode(panaroma)  
     def  CameraClick(self,cameraMode):
         print ("Camera clicked in " + cameraMode + " Mode");  
-        
+        return 'Camera click with mode{}'.format(cameraMode)
 ''' Nokia is a Mobile phone: Illustration of Inheritance'''  
         
 class Nokia (Mobile):
   #insatnce methods for Nokia  
     def GetBlueToothConnection(self):
-         print("Bluetooth connected")  
+         print("Bluetooth connected") 
+         return "Bluetooth"
          
     ''' Dynamic polymorphism '''
      #New implementation for this method which was available in Mobile Class  
@@ -80,5 +86,6 @@ class Nokia (Mobile):
         for person in receiverNumber:
             print("Message sent\n")
             print("To:{} \n Message:{}".format(person,messageToSend))
+        return "Message to multiple"
       
     
