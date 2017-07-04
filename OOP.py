@@ -74,7 +74,7 @@ class Nokia (Mobile):
     #May be Nokia is able to send multiple messages at once
     def  sendMessage(self):
         print("Want to send message\n")
-        receiverNumber = [07889878,07566898,070133656]
+        receiverNumber = ['07889878','07566898','070133656']
         messageToSend = input("Write your message here:")
         
         for person in receiverNumber:
