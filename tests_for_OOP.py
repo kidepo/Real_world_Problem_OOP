@@ -30,14 +30,12 @@ class MobileTestCases(unittest.TestCase):
   def test_Polymorphism_Methods (self):
      self.assertEquals(self.samsungPhone.CameraClick("Paranoma"), "capture")
      
-  def test_No_of_Instances_created(self):
-    instanceNum = Mobile.numberOfInstances
-    self.assertEquals(instanceNum, 5)
+
     
 # test if it throughs error on acces of private variable
   def test_Encaspulation(self):
     _IEMICode = self.phone.IEMICode
-    self.assertEquals(_IEMICode, "IMEI1234")
+    self.assertEquals(_IEMICode, "IMEI1234", msg='Means direct access to private variable denied,Encaspulation works!')
 
   def test_inherentece (self):
       memory = self.nokia.internalMemory
@@ -46,6 +44,10 @@ class MobileTestCases(unittest.TestCase):
   def test_abstraction(self):
       thisMethod = self.nokia.sendMessage()# test whether its collable
       self.assertEquals(thisMethod, True)
+      
+  def test_No_of_Instances_created(self):
+    instanceNum = Mobile.numberOfInstances
+    self.assertEquals(instanceNum, 7)
     
 if __name__ == '__main__':
   unittest.main()
